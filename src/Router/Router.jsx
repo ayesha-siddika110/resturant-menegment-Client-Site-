@@ -8,6 +8,7 @@ import ErrorPage from "../componants/ErrorPage/ErrorPage";
 import Home from "../Layouts/Home/Home";
 import Login from "../Layouts/Login/Login";
 import Register from "../Layouts/Register/Register";
+import AddFoods from "../Layouts/AddFoods/AddFoods";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             path: "/register",
             element: <Register></Register>
         },
+        {
+            path: "/allFoods",
+            element: <AddFoods></AddFoods>
+        }
 
       ]
     },
