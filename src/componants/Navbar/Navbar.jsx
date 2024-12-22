@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
 
     const links = <>
-        <Link>Home</Link>
-        <Link>Home</Link>
-        <Link>Home</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink>All Foods</NavLink>
+        <NavLink>Gallery</NavLink>
     
     </>
     return (
