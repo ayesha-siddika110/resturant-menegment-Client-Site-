@@ -1,16 +1,58 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthPrivider";
+import { FaArrowRight } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 
 const Navbar = () => {
+    const { user,signOutUser } = useContext(AuthContext)
+    const navigate = useContext(AuthContext)
+    const handleSignOut =()=>{
+        signOutUser()
+        .then(res=> {
+            toast.success('Log Out Successfully')
+            navigate('/')
+        })
+
+    }
 
     const links = <>
         <NavLink to="/">Home</NavLink>
         <NavLink>All Foods</NavLink>
         <NavLink>Gallery</NavLink>
-    
+
+    </>
+    const profile = <>
+        {
+            user ? <>
+                <div className="drawer drawer-end">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content ">
+                        {/* Page content here */}
+                        <label htmlFor="my-drawer-4" className="drawer-button "><img src={user?.photoURL} alt="Profile" className="border w-12 h-12 rounded-full" /></label>
+                    </div>
+                    <div className="drawer-side z-50">
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                            {/* Sidebar content here */}
+                            <li><a>Sidebar Item 1</a></li>
+                            <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </>
+
+                :
+
+                <NavLink to="/login" className={`btn`}>Login</NavLink>
+        }
+
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 flex justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,8 +84,8 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                safa
+            <div className="">
+                {profile}
 
             </div>
         </div>
