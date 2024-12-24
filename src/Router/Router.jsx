@@ -9,6 +9,10 @@ import Home from "../Layouts/Home/Home";
 import Login from "../Layouts/Login/Login";
 import Register from "../Layouts/Register/Register";
 import AddFoods from "../Layouts/AddFoods/AddFoods";
+import AllFoods from "../Layouts/AllFoods/AllFoods";
+import FoodDetails from "../Layouts/AllFoods/FoodDetails";
+import FoodPurchase from "../Layouts/AllFoods/FoodPurchase";
+import Gallery from "../Layouts/Gallery/Gallery";
 
 
 export const router = createBrowserRouter([
@@ -30,9 +34,30 @@ export const router = createBrowserRouter([
             element: <Register></Register>
         },
         {
-            path: "/allFoods",
+            path: "/addFoods",
             element: <AddFoods></AddFoods>
+        },
+        {
+          path: "/allFoods",
+          element: <AllFoods></AllFoods>
+        },
+        {
+          path: "/foodDetails/:id",
+          element: <FoodDetails></FoodDetails>,
+          loader: ({params})=> fetch(`http://localhost:3000/foods/${params.id}`)
+
+        },
+        {
+          path: "/foodPurchase/:id",
+          element: <FoodPurchase></FoodPurchase>,
+          loader: ({params})=> fetch(`http://localhost:3000/foods/${params.id}`)
+        },
+        {
+          path: "/gallery",
+          element: <Gallery></Gallery>,
+          loader: ()=> fetch(`http://localhost:3000/foods`)
         }
+
 
       ]
     },

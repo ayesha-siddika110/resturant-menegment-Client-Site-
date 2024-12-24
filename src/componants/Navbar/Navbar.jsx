@@ -19,8 +19,8 @@ const Navbar = () => {
 
     const links = <>
         <NavLink to="/">Home</NavLink>
-        <NavLink>All Foods</NavLink>
-        <NavLink>Gallery</NavLink>
+        <NavLink to="/allFoods">All Foods</NavLink>
+        <NavLink to="/gallery">Gallery</NavLink>
 
     </>
     const profile = <>
@@ -36,7 +36,7 @@ const Navbar = () => {
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                         <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                             {/* Sidebar content here */}
-                            <li><Link to="/allFoods">Add Foods</Link></li>
+                            <li><Link to="/addFoods">Add Foods</Link></li>
                             <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>

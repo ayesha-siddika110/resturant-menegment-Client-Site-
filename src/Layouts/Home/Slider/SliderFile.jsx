@@ -3,7 +3,7 @@
 import { FaArrowRight } from 'react-icons/fa';
 
 const SliderFile = ({img,title, description}) => {
-    console.log(img);
+    // console.log(img);
     
     return (
       <div style={{

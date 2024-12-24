@@ -1,8 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 
 const AddFoods = () => {
+
+    const formref=useRef(null)
     
     const {user} = useContext(AuthContext)
 
@@ -11,13 +15,25 @@ const AddFoods = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
         console.log(data);
+
+        axios.post(`http://localhost:3000/foods`, data)
+        .then(res=>{
+            console.log(res.data);
+            if(res.data.insertedId){
+                toast.success('successfully added the food')
+                formref.current.reset()
+            }
+            
+        })
+
+
         
 
     }
 
     return (
         <div>
-            <form onSubmit={handleAddFoods} className="card-body grid lg:grid-cols-2 grid-cols-1 w-[80%] m-auto">
+            <form ref={formref} onSubmit={handleAddFoods} className="card-body grid lg:grid-cols-2 grid-cols-1 w-[80%] m-auto">
                 {/* name */}
                 <div className="form-control">
                     <label className="label">
@@ -54,7 +70,7 @@ const AddFoods = () => {
                     </label>
 
                     <select name='category' className="select select-ghost select-bordered w-full bg-white">
-                        <option disabled selected>Food category</option>
+                        <option disabled >Food category</option>
                         <option>Starters</option>
                         <option>Main Course</option>
                         <option>Desserts & Drinks</option>
