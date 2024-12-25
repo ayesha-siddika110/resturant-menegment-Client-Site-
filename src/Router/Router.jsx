@@ -12,7 +12,8 @@ import AddFoods from "../Layouts/AddFoods/AddFoods";
 import AllFoods from "../Layouts/AllFoods/AllFoods";
 import FoodDetails from "../Layouts/AllFoods/FoodDetails";
 import FoodPurchase from "../Layouts/AllFoods/FoodPurchase";
-import Gallery from "../Layouts/Gallery/Gallery";
+// import Gallery from "../Layouts/Gallery/Gallery";
+import GalleryPhoto from "../Layouts/Gallery/Gallery";
 
 
 export const router = createBrowserRouter([
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/gallery",
-          element: <Gallery></Gallery>,
+          element: <GalleryPhoto></GalleryPhoto>,
           loader: ()=> fetch(`http://localhost:3000/foods`)
         }
 
