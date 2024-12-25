@@ -37,6 +37,7 @@ const Navbar = () => {
                         <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                             {/* Sidebar content here */}
                             <li><Link to="/addFoods">Add Foods</Link></li>
+                            <li><Link to={`/myFoods/${user?.email}`}>My Foods</Link></li>
                             <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>

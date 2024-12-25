@@ -14,6 +14,7 @@ import FoodDetails from "../Layouts/AllFoods/FoodDetails";
 import FoodPurchase from "../Layouts/AllFoods/FoodPurchase";
 // import Gallery from "../Layouts/Gallery/Gallery";
 import GalleryPhoto from "../Layouts/Gallery/Gallery";
+import MyFoods from "../Layouts/MyFoods/MyFoods";
 
 
 export const router = createBrowserRouter([
@@ -57,6 +58,11 @@ export const router = createBrowserRouter([
           path: "/gallery",
           element: <GalleryPhoto></GalleryPhoto>,
           loader: ()=> fetch(`http://localhost:3000/foods`)
+        },
+        {
+          path:"/myFoods/:email",
+          element: <MyFoods></MyFoods>,
+          loader: ({params})=> fetch(`http://localhost:3000/foods?email=${params.email}`)
         }
 
 
