@@ -10,6 +10,9 @@ import toast from "react-hot-toast";
 const FoodPurchase = () => {
     const {user} = useContext(AuthContext)
     const data = useLoaderData()
+    // console.log(data);
+    const {foodName, price, quantity,description} = data || {}
+    
     useEffect(()=>{
 
         const food_id = (data._id);
@@ -38,6 +41,9 @@ const FoodPurchase = () => {
         const someData = {
             food_id : data._id,
             hr_email: data.email,
+            hr_name: data.username,
+            food_image: data.foodImage,
+            oders_time: currentTime
 
         }
         const formData = new FormData(e.target)
@@ -81,14 +87,14 @@ const FoodPurchase = () => {
                     <label className="label">
                         <span className="label-text text-lg font-semibold">Food Name</span>
                     </label>
-                    <input type="text" name="foodName" placeholder="enter Food name" className="input input-bordered" required />
+                    <input type="text" defaultValue={foodName} name="foodName" placeholder="enter Food name" className="input input-bordered" required />
                 </div>
                 {/* price */}
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg font-semibold">Price</span>
                     </label>
-                    <input type="number" name='price' placeholder="enter Equipment price" className="input input-bordered" required />
+                    <input type="number" name='price' defaultValue={price} placeholder="enter Equipment price" className="input input-bordered" required />
                 </div>
                 {/* quantity */}
                 <div className="form-control">
@@ -96,6 +102,13 @@ const FoodPurchase = () => {
                         <span className="label-text text-lg font-semibold">Food Quantity</span>
                     </label>
                     <input type="text" name='quantity' placeholder="Enter Food Quantity" className="input input-bordered" required />
+                </div>
+                {/* description */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-lg font-semibold">Description</span>
+                    </label>
+                    <textarea  type="text" name='description' placeholder="write something" className="input input-bordered" required />
                 </div>
                 
 

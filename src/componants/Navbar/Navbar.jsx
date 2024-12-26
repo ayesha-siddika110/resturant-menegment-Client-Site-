@@ -38,6 +38,7 @@ const Navbar = () => {
                             {/* Sidebar content here */}
                             <li><Link to="/addFoods">Add Foods</Link></li>
                             <li><Link to={`/myFoods/${user?.email}`}>My Foods</Link></li>
+                            <li><Link to={`/orders/${user?.email}`}>My Orders</Link></li>
                             <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>

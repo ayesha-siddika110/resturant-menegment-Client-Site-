@@ -15,6 +15,8 @@ import FoodPurchase from "../Layouts/AllFoods/FoodPurchase";
 // import Gallery from "../Layouts/Gallery/Gallery";
 import GalleryPhoto from "../Layouts/Gallery/Gallery";
 import MyFoods from "../Layouts/MyFoods/MyFoods";
+import UpdateFood from "../Layouts/MyFoods/UpdateFood";
+import MyOrders from "../Layouts/MyOrders/MyOrders";
 
 
 export const router = createBrowserRouter([
@@ -52,7 +54,7 @@ export const router = createBrowserRouter([
         {
           path: "/foodPurchase/:id",
           element: <FoodPurchase></FoodPurchase>,
-          loader: ({params})=> fetch(`http://localhost:3000/foods/${params.id}`)
+          loader: async({params})=> await fetch(`http://localhost:3000/foods/${params.id}`)
         },
         {
           path: "/gallery",
@@ -63,9 +65,17 @@ export const router = createBrowserRouter([
           path:"/myFoods/:email",
           element: <MyFoods></MyFoods>,
           loader: ({params})=> fetch(`http://localhost:3000/foods?email=${params.email}`)
-        }
-
-
+        },
+        {
+          path:"/updateFood/:id",
+          element: <UpdateFood></UpdateFood>,
+          loader: ({params})=> fetch(`http://localhost:3000/foods/${params.id}`)
+        },
+        {
+          path:"/orders/:email",
+          element: <MyOrders></MyOrders>,
+          loader: async({params})=> await fetch(`http://localhost:3000/purchaseFood?email=${params.email}`)
+        },
       ]
     },
   ]);

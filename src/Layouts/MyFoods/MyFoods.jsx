@@ -1,5 +1,5 @@
 import { GrUpdate } from "react-icons/gr";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 
 
@@ -19,7 +19,7 @@ const MyFoods = () => {
         <th>Food Name</th>
         <th>Price</th>
         <th>Quantity</th>
-        <th></th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
@@ -32,7 +32,7 @@ const MyFoods = () => {
         <td>{item.foodName}</td>
         <td>{item.price}</td>
         <td>{item.quantity}</td>
-        <td><GrUpdate data-tooltip-id="my-tooltip" data-tooltip-content="Update Foods"/></td>
+        <td><Link to={`/updateFood/${item._id}`}><GrUpdate data-tooltip-id="my-tooltip" data-tooltip-content="Update Foods" className="cursor-pointer" /></Link></td>
       </tr>
             
             </>)
