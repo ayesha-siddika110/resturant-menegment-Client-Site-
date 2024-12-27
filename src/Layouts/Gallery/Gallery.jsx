@@ -16,6 +16,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { useLoaderData } from 'react-router-dom';
+import banner from '../../assets/banner.jpg'
 
 const GalleryPhoto = () => {
   const images = [
@@ -107,7 +108,21 @@ const GalleryPhoto = () => {
   
   const [open, setOpen] = React.useState(false)
   return (
-    <div>
+    <div className="pb-12">
+      <div style={{
+                backgroundImage: `url(${banner})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '300px',
+                width: '100%',
+                backgroundColor: '#575555',
+                backgroundBlendMode: 'multiply'
+            }} className='text-white flex flex-col justify-center items-center gap-2'>
+                <p className='uppercase text-4xl'>Foods Photo Gallery</p>
+                <p className='flex items-center gap-3 text-lg'>Home <div className='border-2 w-1 border-orange-500 h-4'></div>Gallery</p>
+      </div>
+
+      
       <button type="button" className='btn' onClick={() => setOpen(true)}>
         Slide Show
       </button>

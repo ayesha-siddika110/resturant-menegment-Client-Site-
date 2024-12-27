@@ -9,6 +9,10 @@ const PrivetRouter = ({children}) => {
     if(user){
         return children
     }
+    // if(!user){
+    //     return navigate('/login')
+    // }
+
     if(loading){
         <span className="loading loading-bars loading-lg"></span>
     }

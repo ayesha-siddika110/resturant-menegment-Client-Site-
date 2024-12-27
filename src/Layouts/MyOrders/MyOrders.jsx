@@ -1,11 +1,22 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
 const MyOrders = () => {
     const data = useLoaderData()
     // console.log(data);
+    const [nodata, setnodata] = useState('')
+
+    useEffect(()=>{
+        if(data?.length === 0){
+            return setnodata('No Orders Foods Here')
+        }
+
+    },[data])
+// console.log(nodata);
+
+    
 
     const [ramaing,setRemaining] = useState(data)
 
@@ -43,7 +54,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            ramaing && ramaing.map((item, index) => (
+                            ramaing ? ramaing.map((item, index) => (
                                 <>
                                     <tr className="hover">
                                         <th>{index + 1}</th>
@@ -56,8 +67,12 @@ const MyOrders = () => {
                                     </tr>
 
                                 </>
-                            ))
+                            )) : <>
+                            
+                            
+                            </>
                         }
+                        <p className='text-center text-3xl font-semibold'>{nodata}</p>
                     </tbody>
                 </table>
             </div>

@@ -12,11 +12,19 @@ const AddFoods = () => {
 
     const handleAddFoods =(e)=>{
         e.preventDefault()
+
+
+        const someData = {
+            purchase_count : 0
+
+        }
+
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
+        const margeData = {...data, ...someData}
         console.log(data);
 
-        axios.post(`https://restaurant-management-server-site.vercel.app/foods`, data)
+        axios.post(`https://restaurant-management-server-site.vercel.app/foods`, margeData)
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){

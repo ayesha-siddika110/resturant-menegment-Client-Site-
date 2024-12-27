@@ -15,7 +15,7 @@ const FoodPurchase = () => {
     
     useEffect(()=>{
 
-        const food_id = (data._id);
+        const food_id = data._id;
     },[data])
     
 
@@ -129,7 +129,7 @@ const FoodPurchase = () => {
 
                 <div className="form-control mt-6">
                     <p></p>
-                    <button className={`py-3 rounded-md bg-slate-600 text-white ${isDisabled ===true ? 'btn btn-disabled py-3' : 'py-3 rounded-md bg-slate-600 text-white'}`} disabled={isDisabled}>Purchase</button>
+                    <button className={`py-3 rounded-md bg-slate-600 text-white ${isDisabled ? 'btn btn-disabled' : ''}`} disabled={isDisabled}>Purchase</button>
                 </div>
             </form>
         </div>

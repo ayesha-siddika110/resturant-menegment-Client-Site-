@@ -72,9 +72,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
-
-
+        <div className={`${isDarkMode ? 'bg-blue-950 text-white' : 'bg-base-100'}`}>
         <div className={`navbar bg-base-100 container m-auto flex justify-between ${isDarkMode && 'bg-blue-950 text-white'}`}>
             <div className="navbar-start">
                 <div className="dropdown">

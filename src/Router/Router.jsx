@@ -18,6 +18,7 @@ import MyFoods from "../Layouts/MyFoods/MyFoods";
 import UpdateFood from "../Layouts/MyFoods/UpdateFood";
 import MyOrders from "../Layouts/MyOrders/MyOrders";
 import PrivetRouter from "./PrivetRouter";
+import HomeFoods from "../Layouts/Home/HomeFood/HomeFoods";
 
 
 export const router = createBrowserRouter([
@@ -27,8 +28,9 @@ export const router = createBrowserRouter([
       errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
-            path: "/",
-            element: <Home></Home>
+            path: "/", 
+            element: <Home></Home>,
+
         },
         {
             path: "/login",
@@ -77,6 +79,7 @@ export const router = createBrowserRouter([
           element: <PrivetRouter><MyOrders></MyOrders></PrivetRouter>,
           loader: async({params})=> await fetch(`https://restaurant-management-server-site.vercel.app/purchaseFood?email=${params.email}`)
         },
+       
       ]
     },
   ]);
