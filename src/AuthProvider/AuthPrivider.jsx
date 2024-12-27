@@ -8,6 +8,8 @@ export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
+
 
     const signInUser = (email, password) => {
         setLoading(true)
@@ -75,7 +77,9 @@ const AuthProvider = ({ children }) => {
         loginUser,
         GoogleLogin,
         updateProfileData,
-        signOutUser
+        signOutUser,
+        setIsDarkMode,
+        isDarkMode
     }
     return (
         <AuthContext.Provider value={authinfo}>

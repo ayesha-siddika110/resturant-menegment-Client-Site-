@@ -1,25 +1,30 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthPrivider";
 import { FaArrowRight } from "react-icons/fa";
 import toast from "react-hot-toast";
+import DarkModeToggle from "react-dark-mode-toggle";
+import './Navbar.css'
+
 
 
 const Navbar = () => {
-    const { user,signOutUser } = useContext(AuthContext)
+    const { user, signOutUser, isDarkMode, setIsDarkMode } = useContext(AuthContext)
     const navigate = useContext(AuthContext)
 
 
     // dark mode
+    console.log(isDarkMode);
 
 
 
-    const handleSignOut =()=>{
+
+    const handleSignOut = () => {
         signOutUser()
-        .then(res=> {
-            toast.success('Log Out Successfully')
-            navigate('/')
-        })
+            .then(res => {
+                toast.success('Log Out Successfully')
+                navigate('/')
+            })
 
     }
 
@@ -40,11 +45,18 @@ const Navbar = () => {
                     </div>
                     <div className="drawer-side z-50">
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                        <ul className={`menu bg-base-200 text-base-content mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4 ${isDarkMode && 'bg-blue-950 text-white'}`}>
                             {/* Sidebar content here */}
                             <li><Link to="/addFoods">Add Foods</Link></li>
                             <li><Link to={`/myFoods/${user?.email}`}>My Foods</Link></li>
                             <li><Link to={`/orders/${user?.email}`}>My Orders</Link></li>
+                            <li className="pl-3">
+                                <DarkModeToggle
+                                    onChange={setIsDarkMode}
+                                    checked={isDarkMode}
+                                    size={60}
+                                />
+                            </li>
                             <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>
@@ -60,7 +72,10 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="navbar bg-base-100 flex justify-between">
+        <div className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
+
+
+        <div className={`navbar bg-base-100 container m-auto flex justify-between ${isDarkMode && 'bg-blue-950 text-white'}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,12 +94,12 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu space-y-3 menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
+                        className={`menu space-y-3 menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow-lg ${isDarkMode ? 'bg-blue-950' : 'bg-base-100'}`}>
                         {links}
                     </ul>
                 </div>
 
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">GRAND R.</a>
 
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -92,11 +107,19 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="">
-                {profile}
+            <div className="gap-3">
+
+                <div>
+                    {profile}
+
+                </div>
+
 
             </div>
-            
+
+            {/* dark mode */}
+
+        </div>
         </div>
     );
 };
