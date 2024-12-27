@@ -21,111 +21,115 @@ import banner from '../../assets/banner.jpg'
 const GalleryPhoto = () => {
   const images = [
     {
-       src: "https://i.ibb.co.com/27Xgh97/5.jpg",
-       width: 320,
-       height: 174,
+      src: "https://i.ibb.co.com/27Xgh97/5.jpg",
+      width: 320,
+      height: 174,
       //  isSelected: true,
-       caption: "After Rain (Jeshu John - designerspics.com)",
+      caption: "After Rain (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/tmmdsg3/images.jpg",
-       width: 400,
-       height: 300,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/tmmdsg3/images.jpg",
+      width: 400,
+      height: 300,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/n1ZQZyb/2.jpg",
-       width: 400,
-       height: 100,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/n1ZQZyb/2.jpg",
+      width: 400,
+      height: 100,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/RcHmRmg/Grilled-Chicken-Caesar-Salad.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/RcHmRmg/Grilled-Chicken-Caesar-Salad.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/DMBYWsq/1.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/DMBYWsq/1.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/drXCpsr/Beef-Burger-with-Fries.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/drXCpsr/Beef-Burger-with-Fries.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/6NDVnK0/3.jpg",
-       width: 320,
-       height: 212,
+      src: "https://i.ibb.co.com/6NDVnK0/3.jpg",
+      width: 320,
+      height: 212,
     },
     {
-       src: "https://i.ibb.co.com/27Xgh97/5.jpg",
-       width: 320,
-       height: 174,
+      src: "https://i.ibb.co.com/27Xgh97/5.jpg",
+      width: 320,
+      height: 174,
       //  isSelected: true,
-       caption: "After Rain (Jeshu John - designerspics.com)",
+      caption: "After Rain (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/tmmdsg3/images.jpg",
-       width: 400,
-       height: 300,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/tmmdsg3/images.jpg",
+      width: 400,
+      height: 300,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/n1ZQZyb/2.jpg",
-       width: 400,
-       height: 100,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/n1ZQZyb/2.jpg",
+      width: 400,
+      height: 100,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/RcHmRmg/Grilled-Chicken-Caesar-Salad.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/RcHmRmg/Grilled-Chicken-Caesar-Salad.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/DMBYWsq/1.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/DMBYWsq/1.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/drXCpsr/Beef-Burger-with-Fries.jpg",
-       width: 320,
-       height: 212,
-       alt: "Boats (Jeshu John - designerspics.com)",
+      src: "https://i.ibb.co.com/drXCpsr/Beef-Burger-with-Fries.jpg",
+      width: 320,
+      height: 212,
+      alt: "Boats (Jeshu John - designerspics.com)",
     },
     {
-       src: "https://i.ibb.co.com/6NDVnK0/3.jpg",
-       width: 320,
-       height: 212,
+      src: "https://i.ibb.co.com/6NDVnK0/3.jpg",
+      width: 320,
+      height: 212,
     },
- ];
-  
+  ];
+
   const [open, setOpen] = React.useState(false)
   return (
     <div className="pb-12">
       <div style={{
-                backgroundImage: `url(${banner})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '300px',
-                width: '100%',
-                backgroundColor: '#575555',
-                backgroundBlendMode: 'multiply'
-            }} className='text-white flex flex-col justify-center items-center gap-2'>
-                <p className='uppercase text-4xl'>Foods Photo Gallery</p>
-                <p className='flex items-center gap-3 text-lg'>Home <div className='border-2 w-1 border-orange-500 h-4'></div>Gallery</p>
+        backgroundImage: `url(${banner})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '300px',
+        width: '100%',
+        backgroundColor: '#575555',
+        backgroundBlendMode: 'multiply'
+      }} className='text-white flex flex-col justify-center items-center gap-2'>
+        <p className='uppercase text-4xl'>Foods Photo Gallery</p>
+        <p className='flex items-center gap-3 text-lg'>Home <div className='border-2 w-1 border-orange-500 h-4'></div>Gallery</p>
       </div>
 
-      
-      <button type="button" className='btn' onClick={() => setOpen(true)}>
-        Slide Show
-      </button>
+
+      <div className="flex justify-center items-center py-14">
+
+        <button type="button" className='bg-orange-500 py-2 px-5 rounded-lg text-white font-semibold text-[16px]' onClick={() => setOpen(true)}>
+          Slide Show
+        </button>
+      </div>
+
 
       <Lightbox
         open={open}
@@ -138,7 +142,7 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/ph6bt9T/Spaghetti-Carbonara.jpg", foodName: "Food 1", width: 10, height: 10 },
             ],
           },
@@ -148,7 +152,7 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/drXCpsr/Beef-Burger-with-Fries.jpg", foodName: "Food 1", width: 10, height: 10 },
             ],
           },
@@ -158,7 +162,7 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/DMBYWsq/1.jpg", foodName: "Food 1", width: 10, height: 10 },
             ],
           },
@@ -168,9 +172,9 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/RcHmRmg/Grilled-Chicken-Caesar-Salad.jpg", foodName: "Food 1", width: 10, height: 10 },
-              
+
             ],
           },
           {
@@ -179,9 +183,9 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/n1ZQZyb/2.jpg", foodName: "Food 1", width: 10, height: 10 },
-              
+
             ],
           },
           {
@@ -190,9 +194,9 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/6NDVnK0/3.jpg", foodName: "Food 1", width: 10, height: 10 },
-              
+
             ],
           },
           {
@@ -201,9 +205,9 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/tmmdsg3/images.jpg", foodName: "Food 1", width: 10, height: 10 },
-              
+
             ],
           },
           {
@@ -212,12 +216,12 @@ const GalleryPhoto = () => {
             width: 3840,
             height: 2560,
             srcSet: [
-              
+
               { src: "https://i.ibb.co.com/27Xgh97/5.jpg", foodName: "Food 1", width: 10, height: 10 },
-              
+
             ],
           },
-         
+
         ]}
       />
 
@@ -237,9 +241,9 @@ const GalleryPhoto = () => {
       </div> */}
       <div className="w-[85%] m-auto">
 
-      <Gallery images={images} />
+        <Gallery images={images} />
       </div>
-      
+
     </div>
   );
 };
