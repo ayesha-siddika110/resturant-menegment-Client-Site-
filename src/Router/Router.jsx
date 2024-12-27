@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/foodDetails/:id",
-          element: <PrivetRouter><FoodDetails></FoodDetails></PrivetRouter>,
+          element: <FoodDetails></FoodDetails>,
           loader: ({params})=> fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
 
         },

@@ -21,7 +21,7 @@ const HomeFoods = () => {
     
     return (
         <div>
-            <h1 className='text-4xl font-semibold text-center pt-14'>Top Foods Quantity</h1>
+            <h1 className='text-4xl font-semibold text-center pt-14'>Top Foods</h1>
             <p className='text-center pt-3 pb-10'>Our Top selling foods is here . Buyer is very happy to our food menu</p>
 
             <div className='w-[80%] m-auto grid grid-cols-3 gap-5'>
