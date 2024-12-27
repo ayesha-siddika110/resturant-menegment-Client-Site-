@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [ramaing,setRemaining] = useState(data)
 
     const handleDelete =(_id)=>{
-        axios.delete(`http://localhost:3000/purchaseFood/${_id}`)
+        axios.delete(`https://restaurant-management-server-site.vercel.app/purchaseFood/${_id}`)
         .then(res=>{
            
             if(res.data.deletedCount>0){

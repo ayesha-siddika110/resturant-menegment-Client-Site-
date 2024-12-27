@@ -30,6 +30,10 @@ const FoodPurchase = () => {
       return () => clearInterval(interval);
     }, []);
     const currentTime =now.format(`dddd, MMMM Do YYYY, ${time}`)
+
+    const [isDisabled, setisDisabled] = useState(false)
+    // console.log(isDisabled);
+    
     
     
     
@@ -51,7 +55,17 @@ const FoodPurchase = () => {
         const margeData = {...dataform, ...someData}
         console.log(margeData);
 
-        axios.post(`http://localhost:3000/purchaseFood`, margeData)
+        if(parseInt(quantity) == 0){
+            toast.error(" item is not available")
+            return setisDisabled(true)
+        }
+
+        const foodquantity = parseInt(e.target.quantity.value)
+        if(foodquantity > quantity){
+            return toast.error("You do not get more than avalable food quantities")
+        }
+
+        axios.post(`https://restaurant-management-server-site.vercel.app/purchaseFood`, margeData)
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){
@@ -115,7 +129,7 @@ const FoodPurchase = () => {
 
                 <div className="form-control mt-6">
                     <p></p>
-                    <button className="py-3 rounded-md bg-slate-600 text-white">Purchase</button>
+                    <button className={`py-3 rounded-md bg-slate-600 text-white ${isDisabled ===true ? 'btn btn-disabled py-3' : 'py-3 rounded-md bg-slate-600 text-white'}`} disabled={isDisabled}>Purchase</button>
                 </div>
             </form>
         </div>

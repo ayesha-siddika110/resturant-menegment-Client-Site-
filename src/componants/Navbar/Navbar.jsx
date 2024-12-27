@@ -8,6 +8,12 @@ import toast from "react-hot-toast";
 const Navbar = () => {
     const { user,signOutUser } = useContext(AuthContext)
     const navigate = useContext(AuthContext)
+
+
+    // dark mode
+
+
+
     const handleSignOut =()=>{
         signOutUser()
         .then(res=> {
@@ -90,6 +96,7 @@ const Navbar = () => {
                 {profile}
 
             </div>
+            
         </div>
     );
 };

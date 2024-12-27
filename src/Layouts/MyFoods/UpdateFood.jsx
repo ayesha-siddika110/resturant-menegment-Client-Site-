@@ -21,7 +21,7 @@ const UpdateFood = () => {
         const dataF = Object.fromEntries(formData.entries())
         console.log(dataF);
 
-        axios.patch(`http://localhost:3000/foods/${data._id}`, dataF)
+        axios.patch(`https://restaurant-management-server-site.vercel.app/foods/${data._id}`, dataF)
         .then(res=>{
             console.log(res.data);
             if(res.data.modifiedCount>0){

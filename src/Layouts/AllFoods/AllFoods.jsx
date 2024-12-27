@@ -5,18 +5,21 @@ import banner from '../../assets/banner.jpg'
 
 const AllFoods = () => {
     const [foods, setFoods] = useState([])
+    const [search, setSearch] = useState('')
+    // console.log(search);
+    
 
 
     useEffect(() => {
 
 
-        axios.get(`http://localhost:3000/foods`)
+        axios.get(`https://restaurant-management-server-site.vercel.app/foods?search=${search}`)
             .then(res => {
                 console.log(res.data);
 
                 setFoods(res.data);
             })
-    }, [])
+    }, [search])
 
 
 
@@ -39,7 +42,7 @@ const AllFoods = () => {
             </div>
             <p className='pt-20'>Search</p>
             <label className="input input-bordered flex items-center justify-center gap-2 w-[300px]">
-                <input type="text" className="grow w-[50px]" placeholder="Search" />
+                <input type="text" onChange={e=> setSearch(e.target.value)} className="grow w-[50px]" placeholder="Search" />
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"

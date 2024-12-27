@@ -16,7 +16,7 @@ const AddFoods = () => {
         const data = Object.fromEntries(formData.entries())
         console.log(data);
 
-        axios.post(`http://localhost:3000/foods`, data)
+        axios.post(`https://restaurant-management-server-site.vercel.app/foods`, data)
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){
