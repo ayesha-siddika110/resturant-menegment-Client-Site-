@@ -48,14 +48,14 @@ const AddFoods = () => {
                     <label className="label">
                         <span className=" text-lg font-semibold">Your Name</span>
                     </label>
-                    <input type="text" defaultValue={user?.displayName} placeholder="enter Item name" name='username' className="input input-bordered" readOnly required />
+                    <input type="text" defaultValue={user?.displayName} placeholder="enter Item name" name='username' className={`input input-bordered ${isDarkMode && 'text-black'}`} readOnly required />
                 </div>
                 {/* email */}
                 <div className="form-control">
                     <label className="label">
                         <span className=" text-lg font-semibold">Your email</span>
                     </label>
-                    <input type="text" defaultValue={user?.email} name='email' className="input input-bordered" readOnly />
+                    <input type="text" defaultValue={user?.email} name='email' className={`input input-bordered ${isDarkMode && 'text-black'}`} readOnly />
                 </div>
                 {/* food name */}
 
@@ -70,7 +70,7 @@ const AddFoods = () => {
                     <label className="label">
                         <span className=" text-lg font-semibold">Food Image</span>
                     </label>
-                    <input type="text" name='foodImage' placeholder="enter Food Image URL" className="input input-bordered" required />
+                    <input type="text" name='foodImage' placeholder="enter Food Image URL" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                 </div>
                 {/* category */}
                 <div className='form-control '>
@@ -90,28 +90,28 @@ const AddFoods = () => {
                     <label className="label">
                         <span className=" text-lg font-semibold">Price</span>
                     </label>
-                    <input type="number" name='price' placeholder="enter Equipment price" className="input input-bordered" required />
+                    <input type="number" name='price' placeholder="enter Equipment price" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                 </div>
                 {/* quantity */}
                 <div className="form-control">
                     <label className="label">
                         <span className=" text-lg font-semibold">Food Quantity</span>
                     </label>
-                    <input type="text" name='quantity' placeholder="Enter Food Quantity" className="input input-bordered" required />
+                    <input type="text" name='quantity' placeholder="Enter Food Quantity" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                 </div>
                 {/* descriptions */}
                 <div className="form-control">
                     <label className="label">
                         <span className=" text-lg font-semibold">Description</span>
                     </label>
-                    <textarea type="text" name='description' placeholder="ingredients, making procedure, etc." className="input input-bordered" required />
+                    <textarea type="text" name='description' placeholder="ingredients, making procedure, etc." className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                 </div>
                 {/* food origin */}
                 <div className="form-control">
                     <label className="label">
                         <span className=" text-lg font-semibold">Food Origin</span>
                     </label>
-                    <input type="text" name='foodOrigin' placeholder="enter food origin Country" className="input input-bordered" required />
+                    <input type="text" name='foodOrigin' placeholder="enter food origin Country" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                 </div>
                 
 

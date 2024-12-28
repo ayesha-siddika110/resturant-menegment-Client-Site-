@@ -62,13 +62,13 @@ const Login = () => {
                     <label className="label">
                         <span className="">Email</span>
                     </label>
-                    <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                    <input type="email" name='email' placeholder="email" className={`input input-bordered ${isDarkMode && 'text-black'}`} />
                 </div>
                 <div className="form-control relative">
                     <label className="label">
                         <span className="">Password</span>
                     </label>
-                    <input type={`${eye ? 'password' : 'text'}`} placeholder="password" name='password' className="input input-bordered" />
+                    <input type={`${eye ? 'password' : 'text'}`} placeholder="password" name='password' className={`input input-bordered ${isDarkMode && 'text-black'}`} />
                     {/* <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label> */}

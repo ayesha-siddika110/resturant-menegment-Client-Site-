@@ -140,14 +140,14 @@ const FoodPurchase = () => {
                             <label className="label">
                                 <span className=" text-lg font-semibold">Food Quantity</span>
                             </label>
-                            <input type="text" name='quantity' placeholder="Enter Food Quantity" className="input input-bordered" required />
+                            <input type="text" name='quantity' placeholder="Enter Food Quantity" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                         </div>
                         {/* description */}
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-lg font-semibold">Description</span>
                             </label>
-                            <textarea type="text" name='description' placeholder="write something" className="input input-bordered" required />
+                            <textarea type="text" name='description' placeholder="write something" className={`input input-bordered ${isDarkMode && 'text-black'}`} required />
                         </div>
 
 

@@ -78,25 +78,25 @@ const Register = () => {
                     <label className="label">
                         <span className="">name</span>
                     </label>
-                    <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                    <input type="text" name='name' placeholder="name" className={`input input-bordered ${isDarkMode && 'text-black'}`} />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="">photo</span>
                     </label>
-                    <input type="text" name='photo' placeholder="photo" className="input input-bordered" />
+                    <input type="text" name='photo' placeholder="photo" className={`input input-bordered ${isDarkMode && 'text-black'}`} />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="">email</span>
                     </label>
-                    <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                    <input type="email" name='email' placeholder="email" className={`input input-bordered ${isDarkMode && 'text-black'}`} />
                 </div>
                 <div className="form-control relative">
                     <label className="label">
                         <span className="">Password</span>
                     </label>
-                    <input type={`${eye ? 'password': 'text'}`} placeholder="password" name='password' className="input input-bordered"  />
+                    <input type={`${eye ? 'password': 'text'}`} placeholder="password" name='password' className={`input input-bordered ${isDarkMode && 'text-black'}`}  />
                     <p className='text-xl absolute right-10 top-12' onClick={handleEye}>{eye ? <FaEye /> : <FaEyeSlash />}</p>
 
                 </div>
