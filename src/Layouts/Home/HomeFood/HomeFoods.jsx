@@ -30,7 +30,7 @@ const HomeFoods = () => {
                 }
             </div>
             <div className='py-10 flex justify-center items-center'>
-                <Link className='bg-orange-500 py-3 px-8 text-white rounded-md'>See All</Link>
+                <Link to="/allFoods" className='bg-orange-500 py-3 px-8 text-white rounded-md'>See All</Link>
             </div>
             
         </div>

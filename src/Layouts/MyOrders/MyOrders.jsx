@@ -1,13 +1,15 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../AuthProvider/AuthPrivider';
 
 const MyOrders = () => {
     const data = useLoaderData()
     // console.log(data);
     const [nodata, setnodata] = useState('')
+    const {isDarkMode} = useContext(AuthContext)
 
     useEffect(()=>{
         if(data?.length === 0){
@@ -55,14 +57,14 @@ const MyOrders = () => {
 
 
     return (
-        <div>
+        <div className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
 
             <p className='text-3xl font-semibold text-center py-10'>My Orders Foods</p>
             <div className="overflow-x-auto w-[80%] m-auto pb-20">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
                             <th>sl</th>
                             <th>Image</th>
                             <th>Name</th>
@@ -76,7 +78,7 @@ const MyOrders = () => {
                         {
                             ramaing ? ramaing.map((item, index) => (
                                 <>
-                                    <tr className="hover">
+                                    <tr className="">
                                         <th>{index + 1}</th>
                                         <td><img src={item?.food_image} className='w-12 h-12' alt="food img" /></td>
                                         <td>{item?.foodName}</td>
