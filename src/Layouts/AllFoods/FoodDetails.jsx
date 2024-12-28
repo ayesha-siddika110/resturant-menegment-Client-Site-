@@ -46,7 +46,7 @@ const FoodDetails = () => {
             <p>description: <span>{description}</span></p>
             <p>quantity : <span>{quantity}</span></p>
             <div className="pt-4"></div>
-            <Link to={`${user? `/foodPurchase/${data?._id}` : '/login'}`} className="bg-orange-500 text-white py-3 px-4 rounded-md">Purchase</Link>
+            <Link to={`/foodPurchase/${data?._id}`} className="bg-orange-500 text-white py-3 px-4 rounded-md">Purchase</Link>
 
            </div>
         </div>
