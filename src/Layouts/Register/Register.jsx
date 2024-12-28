@@ -8,7 +8,7 @@ import { updateProfile } from 'firebase/auth';
 import { auth } from '../../Authentication/Firebase.init';
 
 const Register = () => {
-    const {signInUser,GoogleLogin,updateProfileData} = useContext(AuthContext)
+    const {signInUser,GoogleLogin,updateProfileData ,isDarkMode} = useContext(AuthContext)
     const navigate = useNavigate()
     const [eye,setEye] = useState(true)
     const handleRegister = (e) => {
@@ -71,30 +71,30 @@ const Register = () => {
     }
 
     return (
-        <div className='flex flex-col justify-center items-center'>
+        <div className={`flex flex-col justify-center items-center ${isDarkMode && 'bg-blue-950 text-white'}`}>
             <form onSubmit={handleRegister} className="card-body border shadow-lg w-[90%] md:w-[80%] lg:w-[40%] my-4">
                 <h1 className='text-5xl font-semibold text-center py-2'>Registration</h1>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">name</span>
+                        <span className="">name</span>
                     </label>
                     <input type="text" name='name' placeholder="name" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">photo</span>
+                        <span className="">photo</span>
                     </label>
                     <input type="text" name='photo' placeholder="photo" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">email</span>
+                        <span className="">email</span>
                     </label>
                     <input type="email" name='email' placeholder="email" className="input input-bordered" />
                 </div>
                 <div className="form-control relative">
                     <label className="label">
-                        <span className="label-text">Password</span>
+                        <span className="">Password</span>
                     </label>
                     <input type={`${eye ? 'password': 'text'}`} placeholder="password" name='password' className="input input-bordered"  />
                     <p className='text-xl absolute right-10 top-12' onClick={handleEye}>{eye ? <FaEye /> : <FaEyeSlash />}</p>

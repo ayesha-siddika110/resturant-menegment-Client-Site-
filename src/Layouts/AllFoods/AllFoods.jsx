@@ -60,7 +60,7 @@ const AllFoods = () => {
                 </label>
             </div>
 
-            <div className='grid grid-cols-3 gap-6 w-[80%] m-auto'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 w-[80%] m-auto'>
                 {
                     foods?.map((item, index) => <FoodCard key={index} item={item}></FoodCard>)
 

@@ -17,7 +17,7 @@ const FoodCard = ({ item }) => {
             <p className="text-lg font-semibold mt-5">Name : {foodName}</p>
             <p>Price : {price}tk only</p>
             <p>Purchase Count : {purchase_count}</p>
-            <p>description: <span>{description}</span></p>
+            {/* <p>description: <span>{description}</span></p> */}
             <p>quantity : <span>{quantity}</span></p>
             <div className="pt-4">
 

@@ -10,7 +10,7 @@ const PrivetRouter = ({children}) => {
         return children
     }
     // if(!user){
-    //     return navigate('/login')
+    //      navigate('/login')
     // }
 
     if(loading){

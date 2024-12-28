@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/foodPurchase/:id",
-          element: <FoodPurchase></FoodPurchase>,
+          element: <PrivetRouter><FoodPurchase></FoodPurchase></PrivetRouter>,
           loader: async({params})=> await fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
         },
         {

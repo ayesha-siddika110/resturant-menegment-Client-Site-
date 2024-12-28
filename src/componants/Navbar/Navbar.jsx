@@ -38,26 +38,22 @@ const Navbar = () => {
         {
             user ? <>
                 <div className="drawer drawer-end">
+                    
                     <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content ">
                         {/* Page content here */}
-                        <label htmlFor="my-drawer-4" className="drawer-button "><img src={user?.photoURL} alt="Profile" className="border w-12 h-12 rounded-full" /></label>
+                        <label htmlFor="my-drawer-4" className="drawer-button ">
+                            <img src={user?.photoURL} alt="Profile" className="border w-12 h-12 rounded-full" /></label>
                     </div>
                     <div className="drawer-side z-50">
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className={`menu bg-base-200 text-base-content mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4 ${isDarkMode && 'bg-blue-950 text-white'}`}>
+                        <ul className={`bg-base-200  mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4  ${isDarkMode && 'bg-blue-950 text-white'}`}>
                             {/* Sidebar content here */}
-                            <li><Link to="/addFoods">Add Foods</Link></li>
-                            <li><Link to={`/myFoods/${user?.email}`}>My Foods</Link></li>
-                            <li><Link to={`/orders/${user?.email}`}>My Orders</Link></li>
-                            <li className="pl-3">
-                                <DarkModeToggle
-                                    onChange={setIsDarkMode}
-                                    checked={isDarkMode}
-                                    size={60}
-                                />
-                            </li>
-                            <li onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
+                            <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? "/addFoods" : "/login"}`}>Add Foods</Link></li>
+                            <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? `/myFoods/${user?.email}` : '/login'}`}>My Foods</Link></li>
+                            <li className="hover:bg-gray-400 py-2 pl-3"><Link to={`${user ? `/orders/${user?.email}`: '/login'}`}>My Orders</Link></li>
+                            
+                            <li className="hover:bg-gray-400 py-2 pl-3" onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>
                 </div>
@@ -106,6 +102,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="gap-3">
+            <li className="pl-3">
+                                <DarkModeToggle
+                                    onChange={setIsDarkMode}
+                                    checked={isDarkMode}
+                                    size={60}
+                                />
+                            </li>
 
                 <div>
                     {profile}
