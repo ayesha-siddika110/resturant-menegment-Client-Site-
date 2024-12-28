@@ -1,4 +1,4 @@
-# Restaurant Website
+# GRAND R.(Resturant Website)
 
 Welcome to the **GRAND R.** project! This is a dynamic and responsive website for showcasing a restaurant's menu, services, and offerings to customers. It is designed to provide a seamless user experience and enhance customer engagement.
 
