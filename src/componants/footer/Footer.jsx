@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { useContext } from 'react';
+import { FaFacebookF,  FaLinkedinIn } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo/15-removebg-preview.png'

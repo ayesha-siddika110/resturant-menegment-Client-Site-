@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,7 +8,6 @@ import Testimon_Card from './Testimon_Card';
 import axios from 'axios';
 import { AuthContext } from '../../../AuthProvider/AuthPrivider';
 const Testimonials = () => {
-    const [value, setValue] = React.useState(2);
     const [reviews,setreviews] = useState([])
     const {isDarkMode} = useContext(AuthContext)
     useEffect(()=>{

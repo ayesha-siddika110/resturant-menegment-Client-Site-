@@ -1,6 +1,6 @@
 
 import { Gallery } from "react-grid-gallery";
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 // import * as React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -15,7 +15,6 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { useLoaderData } from 'react-router-dom';
 import banner from '../../assets/banner.jpg'
 import { AuthContext } from "../../AuthProvider/AuthPrivider";
 // import './gallary.css'

@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import img2 from '../../../assets/leaves/service.webp'
 import img1 from '../../../assets/leaves/service1.webp'
-import img3 from '../../../assets/leaves/rosemoary-one.webp'
-import SubHeader from '../../../componants/SubHeader/SubHeader';
-import { Link } from 'react-router-dom';
 import leaves from '../../../assets/leaves/rosemoary-one.webp'
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 import { AuthContext } from '../../../AuthProvider/AuthPrivider';

@@ -1,7 +1,6 @@
-import Marquee from "react-fast-marquee";
+
 import Slider from "./Slider/Slider";
 import Marquue from "./Marquue/Marquue";
-import Map from "./Map/Map";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthPrivider";
 import HomeFoods from "./HomeFood/HomeFoods";

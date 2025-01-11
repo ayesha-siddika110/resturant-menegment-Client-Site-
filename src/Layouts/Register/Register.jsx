@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import  { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
 import { Link, useNavigate } from 'react-router-dom';
@@ -10,7 +11,7 @@ import { auth } from '../../Authentication/Firebase.init';
 import banner from '../../assets/banner/White Texture Modern Korean Food Banner.jpg'
 
 const Register = () => {
-    const {signInUser,GoogleLogin,updateProfileData ,isDarkMode} = useContext(AuthContext)
+    const {signInUser,GoogleLogin} = useContext(AuthContext)
     const navigate = useNavigate()
     const [eye,setEye] = useState(true)
     const handleRegister = (e) => {

@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Rating, Stack } from '@mui/material';
-import React, { useContext } from 'react';
-import { FaQuoteLeft } from "react-icons/fa";
+import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthPrivider';
 import { BiSolidQuoteAltLeft } from 'react-icons/bi';
 

@@ -8,7 +8,7 @@ const FoodCard = ({ item }) => {
 
     const {isDarkMode} = useContext(AuthContext)
 
-    const {_id, purchase_count,category, email, description,foodImage, userName, quantity,foodName,price}= item || {}
+    const {_id, purchase_count,foodImage, quantity,foodName,price}= item || {}
 
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import img1 from '../../../assets/marqu/7c1c60e9afaaaa3cce61e5101717796d21b7f914-1426x1080.svg'
 import img2 from '../../../assets/marqu/download (1).jfif'
 import img3 from '../../../assets/marqu/download (2).jfif'

@@ -18,7 +18,6 @@ import MyFoods from "../Layouts/MyFoods/MyFoods";
 import UpdateFood from "../Layouts/MyFoods/UpdateFood";
 import MyOrders from "../Layouts/MyOrders/MyOrders";
 import PrivetRouter from "./PrivetRouter";
-import HomeFoods from "../Layouts/Home/HomeFood/HomeFoods";
 
 
 export const router = createBrowserRouter([
