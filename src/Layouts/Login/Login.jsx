@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import googlelogo from '../../assets/logo/google.png'
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
+import banner from '../../assets/banner/Black White Simple Opening Banner.png'
 
 const Login = () => {
 
@@ -55,39 +56,57 @@ const Login = () => {
     }
 
     return (
-        <div className={`flex flex-col justify-center items-center py-8 ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
-            <form onSubmit={handleLogin} className={`card-body shadow-lg border w-[40%] ${isDarkMode && 'text-white'}`}>
-                <h1 className='text-5xl font-semibold text-center py-2'>Login</h1>
+        <div 
+        style={{
+            backgroundImage: `url(${banner})`,
+            height: '100vh',
+            backgroundSize:'cover',
+            backgroundRepeat: 'no-repeat'
+        }}
+        className={``}>
+         {/* <div className="h-16"></div> */}
+        
+        <div className={`md:flex justify-center py-[10%] md:pt-[10%] md:w-[80%] w-[95%] m-auto text-white`}>
+            
+            <form onSubmit={handleLogin} className={`p-8 shadow-lg border lg:w-[40%] md:w-[60%] `}>
+                <h1 className='text-4xl font-semibold text-center py-2 text-orange-400'>Login Now!</h1>
                 <div className="form-control">
                     <label className="label">
-                        <span className="">Email</span>
+                        <span className="text-white">Email</span>
                     </label>
-                    <input type="email" name='email' placeholder="email" className={`input input-bordered ${isDarkMode && 'text-black'}`} />
+                    <input type="email" name='email' placeholder="email" className={`bg-orange-200 text-black py-3 px-3 `} />
                 </div>
                 <div className="form-control relative">
                     <label className="label">
-                        <span className="">Password</span>
+                        <span className="text-white">Password</span>
                     </label>
-                    <input type={`${eye ? 'password' : 'text'}`} placeholder="password" name='password' className={`input input-bordered ${isDarkMode && 'text-black'}`} />
+                    <input type={`${eye ? 'password' : 'text'}`} placeholder="password" name='password' className={`bg-orange-200 text-black py-3 px-3 input-bordered `} />
                     {/* <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label> */}
                     <p className='text-xl absolute right-10 top-12' onClick={handleEye}>{eye ? <FaEye /> : <FaEyeSlash />}</p>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn py-3 bg-slate-600 text-white">Login</button>
+                    <button className="bg-orange-400 text-black py-3 px-3">Login</button>
                 </div>
-                <p className='text-center py-4'>---------- Continue with -----------</p>
+                <p className='text-center py-4 text-lg'>---------- Continue with -----------</p>
                 <div className='flex justify-center gap-7'>
-                    <h1 onClick={handleGoogleLogin} className='font-bold cursor-pointer '><img className='w-10' src={googlelogo} alt="google" /></h1>
+                    <h1 onClick={handleGoogleLogin} className=' cursor-pointer flex items-center border p-2 text-orange-200 gap-3'>
+                        <img className='w-8' src={googlelogo} alt="google" />
+                        <p className='text-lg'>Google</p>
+                    </h1>
                     {/* <h1 className='font-bold cursor-pointer '><img className='w-16 rounded-full' src={fbimg} alt="facebook" /></h1> */}
                     {/* <h1 onClick={handletwitterlogin} className='font-bold cursor-pointer '><img className='w-10' src={twitimg} alt="" /></h1> */}
                     {/* <h1 onClick={handlegithublogin} className='font-bold cursor-pointer '><img className='w-10' src={gitimg} alt="" /></h1> */}
 
                 </div>
-                <div>Don&apos;t have any account ? please <Link to="/register" className='font-semibold text-blue-600'>Register</Link></div>
+                <div className='pt-6'>Don&apos;t have any account ? please <Link to="/register" className='font-semibold text-orange-600 text-lg'>Register</Link></div>
 
             </form>
+            <div className='lg:w-[60%] md:w-[40%] text-center lg:text-7xl md:text-5xl pt-4 hidden md:flex pl-6' >
+                <p>Wellcome Back !</p>
+            </div>
+        </div>
         </div>
     );
 };

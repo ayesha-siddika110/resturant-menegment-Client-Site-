@@ -48,13 +48,13 @@ const Navbar = () => {
                     </div>
                     <div className="drawer-side z-50">
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className={`bg-base-200  mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4  ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
+                        <ul className={`mt-[63px]  lg:w-[30%] md:w-[30%] w-[50%]  p-4  ${isDarkMode ? 'bg-[#050505ef] text-white' : 'bg-base-100'}`}>
                             {/* Sidebar content here */}
-                            <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? "/addFoods" : "/login"}`}>Add Foods</Link></li>
-                            <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? `/myFoods/${user?.email}` : '/login'}`}>My Foods</Link></li>
-                            <li className="hover:bg-gray-400 py-2 pl-3"><Link to={`${user ? `/orders/${user?.email}`: '/login'}`}>My Orders</Link></li>
+                            <li className="hover:bg-orange-300 py-2 pl-3 border-b"><Link to={`${user ? "/addFoods" : "/login"}`}>Add Foods</Link></li>
+                            <li className="hover:bg-orange-300 py-2 pl-3 border-b"><Link to={`${user ? `/myFoods/${user?.email}` : '/login'}`}>My Foods</Link></li>
+                            <li className="hover:bg-orange-300 py-2 pl-3"><Link to={`${user ? `/orders/${user?.email}`: '/login'}`}>My Orders</Link></li>
                             
-                            <li className="hover:bg-gray-400 py-2 pl-3" onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
+                            <li className="hover:bg-orange-300 py-2 pl-3" onClick={handleSignOut}><Link >Sign Out <FaArrowRight /></Link></li>
                         </ul>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
                 :
 
-                <NavLink to="/login" className={`btn`}>Login</NavLink>
+                <NavLink to="/login" className={`bg-orange-400 py-2 px-4 font-semibold`}>Login</NavLink>
         }
 
     </>

@@ -8,6 +8,7 @@ const Footer = () => {
     const {isDarkMode} = useContext(AuthContext)
     return (
         <div>
+            {/* <div ></div> */}
             <footer className={`footer footer-center  text-base-content rounded p-10 shadow-2xl ${isDarkMode ? 'bg-black text-white': 'bg-orange-100'}`}>
                 <div className='flex items-center gap-3'>
 

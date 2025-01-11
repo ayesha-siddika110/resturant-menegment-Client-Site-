@@ -1,8 +1,8 @@
 
 import {
-    createBrowserRouter,
-   
-  } from "react-router-dom";
+  createBrowserRouter,
+
+} from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
 import ErrorPage from "../componants/ErrorPage/ErrorPage";
 import Home from "../Layouts/Home/Home";
@@ -22,66 +22,67 @@ import HomeFoods from "../Layouts/Home/HomeFood/HomeFoods";
 
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-            path: "/", 
-            element: <Home></Home>,
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
 
-        },
-        {
-            path: "/login",
-            element: <Login></Login>
-        },
-        {
-            path: "/register",
-            element: <Register></Register>
-        },
-        {
-            path: "/addFoods",
-            element: <PrivetRouter><AddFoods></AddFoods></PrivetRouter>
-        },
-        {
-          path: "/allFoods",
-          element: <AllFoods></AllFoods>
-        },
-        {
-          path: "/foodDetails/:id",
-          element: <FoodDetails></FoodDetails>,
-          loader: ({params})=> fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
+      },
 
-        },
-        {
-          path: "/foodPurchase/:id",
-          element: <PrivetRouter><FoodPurchase></FoodPurchase></PrivetRouter>,
-          loader: async({params})=> await fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
-        },
-        {
-          path: "/gallery",
-          element: <GalleryPhoto></GalleryPhoto>,
-          loader: ()=> fetch(`https://restaurant-management-server-site.vercel.app/foods`)
-        },
-        {
-          path:"/myFoods/:email",
-          element: <PrivetRouter><MyFoods></MyFoods></PrivetRouter>,
-          loader: ({params})=> fetch(`https://restaurant-management-server-site.vercel.app/foods?email=${params.email}`)
-        },
-        {
-          path:"/updateFood/:id",
-          element: <UpdateFood></UpdateFood>,
-          loader: ({params})=> fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
-        },
-        {
-          path:"/orders/:email",
-          element: <PrivetRouter><MyOrders></MyOrders></PrivetRouter>,
-          loader: async({params})=> await fetch(`https://restaurant-management-server-site.vercel.app/purchaseFood?email=${params.email}`)
-        },
-       
-      ]
-    },
-  ]);
+      {
+        path: "/addFoods",
+        element: <PrivetRouter><AddFoods></AddFoods></PrivetRouter>
+      },
+      {
+        path: "/allFoods",
+        element: <AllFoods></AllFoods>
+      },
+      {
+        path: "/foodDetails/:id",
+        element: <FoodDetails></FoodDetails>,
+        loader: ({ params }) => fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
+
+      },
+      {
+        path: "/foodPurchase/:id",
+        element: <PrivetRouter><FoodPurchase></FoodPurchase></PrivetRouter>,
+        loader: async ({ params }) => await fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
+      },
+      {
+        path: "/gallery",
+        element: <GalleryPhoto></GalleryPhoto>,
+        loader: () => fetch(`https://restaurant-management-server-site.vercel.app/foods`)
+      },
+      {
+        path: "/myFoods/:email",
+        element: <PrivetRouter><MyFoods></MyFoods></PrivetRouter>,
+        loader: ({ params }) => fetch(`https://restaurant-management-server-site.vercel.app/foods?email=${params.email}`)
+      },
+      {
+        path: "/updateFood/:id",
+        element: <UpdateFood></UpdateFood>,
+        loader: ({ params }) => fetch(`https://restaurant-management-server-site.vercel.app/foods/${params.id}`)
+      },
+      {
+        path: "/orders/:email",
+        element: <PrivetRouter><MyOrders></MyOrders></PrivetRouter>,
+        loader: async ({ params }) => await fetch(`https://restaurant-management-server-site.vercel.app/purchaseFood?email=${params.email}`)
+      },
+
+    ]
+  },
+  {
+    path: "/login",
+    element: <Login></Login>
+  },
+  {
+    path: "/register",
+    element: <Register></Register>
+  },
+]);
 
 
