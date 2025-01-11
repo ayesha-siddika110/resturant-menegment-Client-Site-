@@ -11,7 +11,7 @@ const SliderFile = ({img,title, description}) => {
         backgroundImage: `url(${img})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '90vh',
+        height: '75vh',
         width: '100%',
         backgroundColor: '#575555',
         backgroundBlendMode: 'multiply'

@@ -55,7 +55,7 @@ const Login = () => {
     }
 
     return (
-        <div className={`flex flex-col justify-center items-center py-8 ${isDarkMode && 'bg-blue-950 text-white'}`}>
+        <div className={`flex flex-col justify-center items-center py-8 ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
             <form onSubmit={handleLogin} className={`card-body shadow-lg border w-[40%] ${isDarkMode && 'text-white'}`}>
                 <h1 className='text-5xl font-semibold text-center py-2'>Login</h1>
                 <div className="form-control">

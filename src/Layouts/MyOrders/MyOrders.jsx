@@ -57,14 +57,14 @@ const MyOrders = () => {
 
 
     return (
-        <div className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
+        <div className={`${isDarkMode && 'bg-[#050505ef] text-white'}`}>
 
             <p className='text-3xl font-semibold text-center py-10'>My Orders Foods</p>
             <div className="overflow-x-auto w-[80%] m-auto pb-20">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className={`${isDarkMode && 'bg-blue-950 text-white'}`}>
+                        <tr className={`${isDarkMode && 'bg-[#050505ef] text-white'}`}>
                             <th>sl</th>
                             <th>Image</th>
                             <th>Name</th>

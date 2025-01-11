@@ -2,15 +2,20 @@ import React, { useContext } from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo/15-removebg-preview.png'
 
 const Footer = () => {
     const {isDarkMode} = useContext(AuthContext)
     return (
         <div>
-            <footer className={`footer footer-center  text-base-content rounded p-10 shadow-2xl ${isDarkMode ? 'bg-black text-white': 'bg-slate-200'}`}>
+            <footer className={`footer footer-center  text-base-content rounded p-10 shadow-2xl ${isDarkMode ? 'bg-black text-white': 'bg-orange-100'}`}>
                 <div className='flex items-center gap-3'>
 
-                    <p className='poppins-edu font-semibold text-3xl'>GRAND R.</p>
+                    <div className="flex flex-col items-center space-y-2">
+                                        <img src={logo} className="w-32" alt="" />
+                                        <p className="uppercase text-2xl font-semibold">GRAND R.</p>
+                                        <p className='tracking-[10px]'>--- Restaurant ---</p>
+                                    </div>
                 </div>
                 <nav className="grid grid-flow-col gap-4">
                     <Link className="link link-hover">Home</Link>
@@ -20,15 +25,16 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
-                        <div className='h-10 w-10 flex items-center justify-center rounded-full shadow-2xl bg-blue-600 text-white'>
+                        <a href="https://www.facebook.com/ayesha.siddika.982225/" target="_blank" rel="noopener noreferrer">
+                        <div className='h-10 w-10 flex items-center justify-center rounded-full shadow-2xl border text-orange-500 border-orange-500'>
                             <FaFacebookF className='text-xl' />
                         </div>
-                        <div className='h-10 w-10 flex items-center justify-center rounded-full shadow-2xl bg-purple-600 text-white'>
-                            <FaInstagram className='text-xl' />
-                        </div>
-                        <div className='h-10 w-10 flex items-center justify-center rounded-full shadow-2xl bg-blue-500 text-white'>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ayesha-siddika110/" target="_blank" rel="noopener noreferrer">
+                        <div className='h-10 w-10 flex items-center justify-center rounded-full shadow-2xl border text-orange-500 border-orange-500'>
                             <FaLinkedinIn className='text-xl' />
                         </div>
+                        </a>
 
 
                     </div>

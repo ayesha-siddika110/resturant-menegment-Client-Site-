@@ -17,13 +17,13 @@ const Marquue = () => {
                 <p className=''>Sponsors cultural festivals, cooking competitions, and community events.</p>
             </div>
             <Marquee className=''>
-                <img src={img1} className='h-[100px] object-cover px-7 pr-8' alt="" />
-                <img src={img2} className='h-[100px] object-cover px-7 pr-8' alt="" />
+                <img src={img1} className='h-[100px] object-contain px-7 pr-8' alt="" />
+                <img src={img2} className='h-[100px] object-contain px-7 pr-8' alt="" />
                 <img src={img3} className='h-[100px] object-contain px-7  pr-8' alt="" />
-                <img src={img4} className='h-[100px] object-cover px-7  pr-8' alt="" />
-                <img src={img5} className='h-[100px] object-cover px-7  pr-8' alt="" />
-                <img src={img6} className='h-[100px] object-cover px-7  pr-8' alt="" />
-                <img src={img7} className='h-[100px] object-cover px-7  pr-8' alt="" />
+                <img src={img4} className='h-[100px] object-contain px-7  pr-8' alt="" />
+                <img src={img5} className='h-[100px] object-contain px-7  pr-8' alt="" />
+                <img src={img6} className='h-[100px] object-contain px-7  pr-8' alt="" />
+                <img src={img7} className='h-[100px] object-contain px-7  pr-8' alt="" />
 
             </Marquee>
 

@@ -11,7 +11,7 @@ const MyFoods = () => {
   const {isDarkMode} = useContext(AuthContext)
 
   return (
-    <div className={`${isDarkMode ? 'bg-blue-950 text-white' : 'bg-white'}`}>
+    <div className={`${isDarkMode ? 'bg-[#050505ef] text-white' : 'bg-white'}`}>
       <p className='text-3xl font-semibold text-center py-10'>My Added Foods</p>
 
       <div className="overflow-x-auto w-[80%] m-auto pb-12">

@@ -2,6 +2,7 @@ import { useContext, useRef } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import SubHeader from '../../componants/SubHeader/SubHeader';
 
 
 const AddFoods = () => {
@@ -40,7 +41,9 @@ const AddFoods = () => {
     }
 
     return (
-        <div className={`${isDarkMode ? 'bg-blue-950 text-white' : 'bg-white'}`}>
+        <div className={`${isDarkMode ? 'bg-[#050505ef] text-white' : 'bg-white'}`}>
+           <SubHeader heading={`Add Food Items`}></SubHeader>
+
             <p className='text-2xl py-6 text-center font-semibold'>Add Food To The List</p>
             <form ref={formref} onSubmit={handleAddFoods} className={`card-body grid lg:grid-cols-2 grid-cols-1 w-[70%] m-auto ${isDarkMode && 'text-white'}`}>
                 {/* name */}

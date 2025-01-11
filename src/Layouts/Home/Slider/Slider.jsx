@@ -20,6 +20,7 @@ import img3 from '../../../assets/img3.jpg'
 const Slider = () => {
     return (
         <div>
+            <div id="grandR"></div>
             <Swiper
                 pagination={{
                     type: 'fraction',

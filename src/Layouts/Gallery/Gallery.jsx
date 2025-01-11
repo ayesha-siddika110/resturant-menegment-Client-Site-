@@ -1,6 +1,6 @@
 
 import { Gallery } from "react-grid-gallery";
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // import * as React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -17,8 +17,12 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { useLoaderData } from 'react-router-dom';
 import banner from '../../assets/banner.jpg'
+import { AuthContext } from "../../AuthProvider/AuthPrivider";
+// import './gallary.css'
 
 const GalleryPhoto = () => {
+  
+      const {isDarkMode} = useContext(AuthContext)
   const images = [
     {
       src: "https://i.ibb.co.com/27Xgh97/5.jpg",
@@ -107,8 +111,12 @@ const GalleryPhoto = () => {
   ];
 
   const [open, setOpen] = React.useState(false)
+  // useEffect(() => {
+  //   document.documentElement.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+  // }, [isDarkMode]);
   return (
-    <div className="pb-12">
+    <div className="">
+       <div className="h-16"></div>
       <div style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: 'cover',
@@ -123,7 +131,7 @@ const GalleryPhoto = () => {
       </div>
 
 
-      <div className="flex justify-center items-center py-14">
+      <div className={`flex justify-center items-center py-14 ${isDarkMode ? 'bg-[#050505ef]' : 'bg-white'}`}>
 
         <button type="button" className='bg-orange-500 py-2 px-5 rounded-lg text-white font-semibold text-[16px]' onClick={() => setOpen(true)}>
           Slide Show
@@ -131,10 +139,13 @@ const GalleryPhoto = () => {
       </div>
 
 
+      <div >
+
       <Lightbox
         open={open}
         close={() => setOpen(false)}
         plugins={[Captions, Fullscreen, Slideshow, Thumbnails, Video, Zoom]}
+        
         slides={[
           {
             src: `https://i.ibb.co.com/ph6bt9T/Spaghetti-Carbonara.jpg`, foodName: "Food 1",
@@ -223,7 +234,9 @@ const GalleryPhoto = () => {
           },
 
         ]}
+        
       />
+      </div>
 
       {/* gellary images */}
 
@@ -239,9 +252,12 @@ const GalleryPhoto = () => {
         <img src="https://i.ibb.co.com/6NDVnK0/3.jpg" alt="" />
         <img src="https://i.ibb.co.com/n1ZQZyb/2.jpg" alt="" />
       </div> */}
-      <div className="w-[85%] m-auto">
+      <div className={`${isDarkMode && 'bg-[#050505ef] text-white'} pb-16`}>
+
+      <div className={`w-[85%] m-auto ` }>
 
         <Gallery images={images} />
+      </div>
       </div>
 
     </div>

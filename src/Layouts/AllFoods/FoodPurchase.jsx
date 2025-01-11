@@ -80,7 +80,7 @@ const FoodPurchase = () => {
     }
 
     return (
-        <div className={`py-20 ${isDarkMode ? 'bg-blue-950 text-white' : 'bg-white'} `}>
+        <div className={`py-20 ${isDarkMode ? 'bg-[#050505ef] text-white' : 'bg-white'} `}>
 
 
             <div className="w-[80%] m-auto border-2 border-slate-800 p-6 flex lg:flex-row flex-col py-10 ">

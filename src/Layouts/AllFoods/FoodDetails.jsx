@@ -30,7 +30,7 @@ const FoodDetails = () => {
 
     
     return (
-     <div className={`${isDarkMode? 'bg-blue-950 text-white' : 'bg-white'}`}>
+     <div className={`${isDarkMode? 'bg-[#050505ef] text-white' : 'bg-white'}`}>
      <p className="text-4xl text-center pt-2 font-semibold mb-6">Single food</p>
         <div className="flex gap-8 w-[80%] m-auto border-2 p-8">
            <div className="w-[50%]">

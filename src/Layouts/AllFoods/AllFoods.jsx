@@ -29,7 +29,8 @@ const AllFoods = () => {
 
 
     return (
-        <div className={`${isDarkMode ? 'bg-blue-950' : 'bg-white'}`}>
+        <div className={`${isDarkMode ? 'bg-[#050505ef]' : 'bg-white'}`}>
+             <div className="h-16"></div>
             <div style={{
                 backgroundImage: `url(${banner})`,
                 backgroundSize: 'cover',

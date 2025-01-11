@@ -5,6 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import toast from "react-hot-toast";
 import DarkModeToggle from "react-dark-mode-toggle";
 import './Navbar.css'
+import logo from '../../assets/logo/15-removebg-preview.png'
 
 
 
@@ -43,11 +44,11 @@ const Navbar = () => {
                     <div className="drawer-content ">
                         {/* Page content here */}
                         <label htmlFor="my-drawer-4" className="drawer-button ">
-                            <img src={user?.photoURL} alt="Profile" className="border w-12 h-12 rounded-full" /></label>
+                            <img src={user?.photoURL} alt="Profile" className="border w-10 h-10 rounded-full" /></label>
                     </div>
                     <div className="drawer-side z-50">
                         <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className={`bg-base-200  mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4  ${isDarkMode && 'bg-blue-950 text-white'}`}>
+                        <ul className={`bg-base-200  mt-[63px]   lg:w-[30%] md:w-[30%] w-[50%]  p-4  ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
                             {/* Sidebar content here */}
                             <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? "/addFoods" : "/login"}`}>Add Foods</Link></li>
                             <li className="hover:bg-gray-400 py-2 pl-3 border-b"><Link to={`${user ? `/myFoods/${user?.email}` : '/login'}`}>My Foods</Link></li>
@@ -68,8 +69,8 @@ const Navbar = () => {
 
     </>
     return (
-        <div className={`${isDarkMode ? 'bg-blue-950 text-white' : 'bg-base-100'}`}>
-        <div className={`navbar bg-base-100 container m-auto flex justify-between ${isDarkMode && 'bg-blue-950 text-white'}`}>
+        <div className={`${isDarkMode ? 'bg-[#050505] text-white' : 'bg-base-100'} fixed z-50 w-full top-0`}>
+        <div className={`navbar  container m-auto flex justify-between ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -88,12 +89,15 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className={`menu space-y-3 menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow-lg ${isDarkMode ? 'bg-blue-950' : 'bg-base-100'}`}>
+                        className={`menu space-y-3 menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow-lg ${isDarkMode ? 'bg-[#050505ef]' : 'bg-base-100'}`}>
                         {links}
                     </ul>
                 </div>
 
-                <a className="btn btn-ghost text-xl">GRAND R.</a>
+                <div className="flex flex-col items-center">
+                    <img src={logo} className="w-16" alt="" />
+                    <p className="uppercase text-lg font-semibold">GRAND R.</p>
+                </div>
 
             </div>
             <div className="navbar-center hidden lg:flex">

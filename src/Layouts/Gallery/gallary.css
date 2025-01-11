@@ -1,0 +1,15 @@
+/* :root {
+    --bg-color: white;
+    --text-color: black;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #050505;
+    --text-color: white;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+   */

@@ -12,7 +12,7 @@ const FoodCard = ({ item }) => {
 
 
     return (
-        <div className={`border-2 p-4 rounded-xl ${isDarkMode ? 'bg-black text-white' : 'bg-white'}`}>
+        <div className={`border-2 p-4 shadow-md shadow-[#00000048] rounded-xl ${isDarkMode ? 'bg-[#252121ef] text-white border-[#050505a9] shadow-md shadow-[#00000049]' : 'bg-white'}`}>
             <img src={foodImage} className='h-[200px] w-full object-cover object-center rounded-xl' alt="food image" />
             <p className="text-lg font-semibold mt-5">Name : {foodName}</p>
             <p>Price : {price}tk only</p>

@@ -71,7 +71,7 @@ const Register = () => {
     }
 
     return (
-        <div className={`flex flex-col justify-center items-center ${isDarkMode && 'bg-blue-950 text-white'}`}>
+        <div className={`flex flex-col justify-center items-center ${isDarkMode && 'bg-[#050505ef] text-white'}`}>
             <form onSubmit={handleRegister} className="card-body border shadow-lg w-[90%] md:w-[80%] lg:w-[40%] my-4">
                 <h1 className='text-5xl font-semibold text-center py-2'>Registration</h1>
                 <div className="form-control">

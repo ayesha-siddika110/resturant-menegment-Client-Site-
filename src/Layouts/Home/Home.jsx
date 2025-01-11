@@ -5,16 +5,22 @@ import Map from "./Map/Map";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthPrivider";
 import HomeFoods from "./HomeFood/HomeFoods";
+import Testimonials from "./Testimonials/Testimonials";
+import BestSelling from "./BestSelling/BestSelling";
 
 
 const Home = () => {
     const {isDarkMode} = useContext(AuthContext)
     return (
-        <div className={`${isDarkMode ? 'bg-blue-950 text-white': 'bg-base-100'}`}>
+        <div className={`${isDarkMode ? 'bg-[#050505ef] text-white': 'bg-base-100'}`}>
+            <div className="h-16"></div>
             <Slider></Slider>
             <HomeFoods></HomeFoods>
+            {/* BEST SElling */}
+            <BestSelling></BestSelling>
+            <Testimonials></Testimonials>
             <Marquue></Marquue>
-            <Map></Map>
+            {/* <Map></Map> */}
 
             
         </div>
