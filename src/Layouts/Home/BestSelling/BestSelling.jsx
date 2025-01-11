@@ -35,15 +35,15 @@ const BestSelling = () => {
                     </div>
                     <div className='flex gap-2 items-center'>
                     <IoIosCheckmarkCircleOutline className='text-orange-500 text-lg' />
-                    <p className='text-lg'>Fine Dinning</p>
+                    <p className='text-lg'>Food Catering</p>
                     </div>
                     <div className='flex gap-2 items-center'>
                     <IoIosCheckmarkCircleOutline className='text-orange-500 text-lg' />
-                    <p className='text-lg'>Fine Dinning</p>
+                    <p className='text-lg'>Food Delivery</p>
                     </div>
                     <div className='flex gap-2 items-center'>
                     <IoIosCheckmarkCircleOutline className='text-orange-500 text-lg' />
-                    <p className='text-lg'>Fine Dinning</p>
+                    <p className='text-lg'>Wedding Event</p>
                     </div>
                 </div>
             </div>
